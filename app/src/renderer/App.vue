@@ -1,39 +1,45 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <md-toolbar>
+      <md-button class="md-icon-button" @click.native="openMenu">
+        <md-icon>menu</md-icon>
+      </md-button>
+
+      <h2 class="md-title">My super library</h2>
+    </md-toolbar>
+
+    <sidebar-menu ref="menu"></sidebar-menu>
+
+    <div class="main-content">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
   import store from 'renderer/vuex/store'
+
+  import SidebarMenu from 'renderer/partials/sidebarMenu'
+
   export default {
+    components: {
+      SidebarMenu
+    },
+    methods: {
+      openMenu () {
+        this.$refs.menu.toggle()
+      }
+    },
     store
   }
 </script>
 
 <style>
-  @import url(https://fonts.googleapis.com/css?family=Lato:300);
-
-  * {
-    margin: 0;
-    padding: 0;
+  .main-content {
+    padding: 16px;
   }
-
-  html,
-  body { height: 100%; }
-
-  body {
-    align-items: center;
-    background:
-      radial-gradient(
-        ellipse at center,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(229, 229, 229, .85) 100%
-      );
-    background-position: center;
-    display: flex;
-    font-family: Lato, Helvetica, sans-serif;
-    justify-content: center;
-    text-align: center;
+  .notie-textbox {
+    color: #FFFFFF;
+    padding: 22px;
   }
 </style>

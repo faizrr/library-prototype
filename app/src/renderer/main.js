@@ -5,20 +5,16 @@ import Router from 'vue-router'
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
+import 'notie/dist/notie.css'
 
 import App from './App'
-import routes from './routes'
+import router from './router'
 
 Vue.use(Electron)
 Vue.use(Resource)
 Vue.use(Router)
 Vue.use(VueMaterial)
 Vue.config.debug = true
-
-const router = new Router({
-  scrollBehavior: () => ({ y: 0 }),
-  routes
-})
 
 /* eslint-disable no-new */
 new Vue({
