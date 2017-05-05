@@ -59,6 +59,10 @@ is-stream@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
+lodash.merge@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.0.tgz#69884ba144ac33fe699737a6086deffadd0f89c5"
+
 lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
@@ -70,6 +74,10 @@ lowercase-keys@^1.0.0:
 notie@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/notie/-/notie-4.3.1.tgz#0d199de15130242e21675507aba63c6929e0adda"
+
+object-path@^0.11.2:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
 
 prepend-http@^1.0.1:
   version "1.0.4"
@@ -120,6 +128,13 @@ vue-router@^2.1.2:
 vue@^2.1.10:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.3.2.tgz#9e52aae3593480be235ff227557837e69f98203a"
+
+vuex-persistedstate@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/vuex-persistedstate/-/vuex-persistedstate-1.4.1.tgz#d1b408e6ba6cda5e849226856820600996aef5ef"
+  dependencies:
+    lodash.merge "^4.6.0"
+    object-path "^0.11.2"
 
 vuex@^2.1.1:
   version "2.3.1"
