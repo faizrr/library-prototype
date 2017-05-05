@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'Welcome',
-    component: require('components/LandingPageView'),
+    component: require('components/HomePage'),
     meta: { requiresLogin: true }
   },
   {
