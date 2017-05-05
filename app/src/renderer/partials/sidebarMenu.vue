@@ -17,11 +17,9 @@
         </router-link>
       </md-list-item>
 
-      <md-list-item>
-        <router-link to="/books">
-          <md-icon>exit_to_app</md-icon>
-          <span>Exit</span>
-        </router-link>
+      <md-list-item @click.native="performLogOut">
+        <md-icon>exit_to_app</md-icon>
+        <span>Exit</span>
       </md-list-item>
     </md-list>
   </md-sidenav>
@@ -32,6 +30,12 @@
     methods: {
       toggle () {
         this.$refs.menu.toggle()
+      },
+      performLogOut () {
+        this.$store.dispatch('logOut').then(() => {
+          this.$refs.menu.toggle()
+          this.$router.replace('/sign_in')
+        })
       }
     }
   }

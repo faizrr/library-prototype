@@ -9,6 +9,10 @@ const mutations = {
   [types.AUTHENTICATE_USER] (state, user) {
     state.isAuthenticated = true
     state.user = user
+  },
+  [types.LOG_OUT] (state) {
+    state.isAuthenticated = false
+    state.user = null
   }
 }
 
