@@ -7,3 +7,8 @@ export const authenticate = ({ commit }) => {
 export const logOut = ({ commit }) => {
   commit(types.LOG_OUT)
 }
+
+// Books
+export const addBook = ({ commit }) => {
+  commit(types.ADD_BOOK)
+}

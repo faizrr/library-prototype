@@ -4,14 +4,14 @@
       <md-subheader>Navigation</md-subheader>
 
       <md-list-item>
-        <router-link to="/books">
+        <router-link to="/books" @click.native="toggle">
           <md-icon>library_books</md-icon>
           <span>Books</span>
         </router-link>
       </md-list-item>
 
       <md-list-item>
-        <router-link to="/books">
+        <router-link to="/users" @click.native="toggle">
           <md-icon>person</md-icon>
           <span>Users</span>
         </router-link>

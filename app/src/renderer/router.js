@@ -15,6 +15,12 @@ const routes = [
     meta: { requiresLogin: true }
   },
   {
+    path: '/books',
+    name: 'Books',
+    component: require('components/BooksView'),
+    meta: { requiresLogin: true }
+  },
+  {
     path: '*',
     redirect: '/'
   }

@@ -27,6 +27,10 @@ duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
 
+fuse.js@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.0.0.tgz#7b6c0b177f6ffc6421e4f229843b3f70a21b1ac5"
+
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
