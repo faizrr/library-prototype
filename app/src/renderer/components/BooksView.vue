@@ -6,6 +6,10 @@
       <md-input-container style="flex: 1">
         <md-input v-model="search" placeholder="Search..." />
       </md-input-container>
+
+      <md-button class="md-icon-button" @click.native="addBook">
+        <md-icon>add</md-icon>
+      </md-button>
     </md-toolbar>
 
     <md-table>
@@ -25,11 +29,14 @@
         </md-table-row>
       </md-table-body>
     </md-table>
+
+    <add-book-from ref="addForm"></add-book-from>
   </md-table-card>
 </template>
 
 <script>
   import Fuse from 'fuse.js'
+  import AddBookFrom from 'renderer/partials/addBookForm'
 
   export default {
     mounted: function () {
@@ -39,6 +46,9 @@
 
       this.fuse = new Fuse(this.books, fuseSearchOptions)
       this.result = this.books
+    },
+    components: {
+      AddBookFrom
     },
     data: function () {
       return {
@@ -55,6 +65,11 @@
         } else {
           this.result = this.fuse.search(query)
         }
+      }
+    },
+    methods: {
+      addBook () {
+        this.$refs.addForm.open()
       }
     }
   }
