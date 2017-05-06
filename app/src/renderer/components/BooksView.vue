@@ -39,10 +39,10 @@
               </md-button>
             </div>
             <div v-else>
-              <md-button class="md-icon-button" @click.native="reserveBook(row)">
+              <md-button class="md-icon-button" @click.native="reserveBook(row)" v-if="!row.reservator">
                 <md-icon>file_download</md-icon>
               </md-button>
-              <md-button class="md-icon-button" @click.native="returnBook(row)">
+              <md-button class="md-icon-button" @click.native="returnBook(row)" v-if="row.reservator === currentUser.login">
                 <md-icon>file_upload</md-icon>
               </md-button>
             </div>
