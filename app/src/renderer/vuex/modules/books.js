@@ -8,13 +8,15 @@ const state = [
     bookId: '123',
     name: 'Foo',
     author: 'Bar',
-    publishYear: '1234'
+    publishYear: '1234',
+    isAvailable: true
   },
   {
     bookId: '456',
     name: 'Azazaza',
     author: 'qqqq',
-    publishYear: '1234'
+    publishYear: '1234',
+    isAvailable: false
   }
 ]
 
@@ -22,7 +24,8 @@ const mutations = {
   [types.ADD_BOOK] (state, bookData) {
     const book = {
       ...bookData,
-      bookId: uuid()
+      bookId: uuid(),
+      isAvailable: true
     }
     state.push(book)
   },

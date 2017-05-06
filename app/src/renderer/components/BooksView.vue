@@ -18,6 +18,7 @@
           <md-table-head>Name</md-table-head>
           <md-table-head>Author</md-table-head>
           <md-table-head>Publish year</md-table-head>
+          <md-table-head>Is available</md-table-head>
           <md-table-head>Actions</md-table-head>
         </md-table-row>
       </md-table-header>
@@ -27,6 +28,7 @@
           <md-table-cell>{{ row.name }}</md-table-cell>
           <md-table-cell>{{ row.author }}</md-table-cell>
           <md-table-cell>{{ row.publishYear }}</md-table-cell>
+          <md-table-cell><md-icon>{{ row.isAvailable ? 'check' : 'close' }}</md-icon></md-table-cell>
           <md-table-cell>
             <div>
               <md-button class="md-icon-button" @click.native="editBook(row)">
