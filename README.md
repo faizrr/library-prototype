@@ -1,26 +1,32 @@
 # simple-library
 
-> An electron-vue project
+> Example of library automation system
+
+It was a task in university for a whole semester
+
+Teacher disallowed using Client-Server architectures, DBs and oblige us to store all stuff in files localy >_<
+
+So, there's a lot of bullshit code
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+yarn install
 
 # serve with hot reload at localhost:9080
-npm run dev
+yarn run dev
 
 # build electron app for production
-npm run build
+yarn run build
 
 # lint all JS/Vue component files in `app/src`
-npm run lint
+yarn run lint
 
 # run webpack in production
-npm run pack
+yarn run pack
 ```
-More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/en/npm_scripts.html).
+More information can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/en/yarn_scripts.html).
 
 ---
 
