@@ -28,14 +28,22 @@
           <md-table-cell>{{ row.name }}</md-table-cell>
           <md-table-cell>{{ row.author }}</md-table-cell>
           <md-table-cell>{{ row.publishYear }}</md-table-cell>
-          <md-table-cell><md-icon>{{ row.isAvailable ? 'check' : 'close' }}</md-icon></md-table-cell>
+          <md-table-cell><md-icon>{{ row.reservator ? 'close' : 'check' }}</md-icon></md-table-cell>
           <md-table-cell>
-            <div>
+            <div v-if="currentUser.role === 'admin'">
               <md-button class="md-icon-button" @click.native="editBook(row)">
                 <md-icon>edit</md-icon>
               </md-button>
               <md-button class="md-icon-button" @click.native="removeBook(row)">
                 <md-icon>delete_forever</md-icon>
+              </md-button>
+            </div>
+            <div v-else>
+              <md-button class="md-icon-button" @click.native="reserveBook(row)">
+                <md-icon>file_download</md-icon>
+              </md-button>
+              <md-button class="md-icon-button" @click.native="returnBook(row)">
+                <md-icon>file_upload</md-icon>
               </md-button>
             </div>
           </md-table-cell>
@@ -68,7 +76,8 @@
         fuse: null,
         search: '',
         books: this.$store.getters.books,
-        result: []
+        result: [],
+        currentUser: this.$store.getters.currentUser
       }
     },
     watch: {
@@ -89,6 +98,16 @@
       },
       removeBook (book) {
         this.$store.dispatch('removeBook', book)
+      },
+      reserveBook (book) {
+        const user = this.$store.getters.currentUser
+        this.$store.dispatch('reserveBook', { book, user })
+      },
+      returnBook (book) {
+        const user = this.$store.getters.currentUser
+        if (book.reservator === user.login) {
+          this.$store.dispatch('returnBook', book)
+        }
       }
     }
   }

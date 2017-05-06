@@ -1,7 +1,16 @@
 import * as types from '../mutation-types'
 
 const state = [
-  { login: 'admin', password: 'admin', role: 'admin' }
+  {
+    login: 'admin',
+    password: 'admin',
+    role: 'admin'
+  },
+  {
+    login: 'user',
+    password: 'user',
+    role: 'user'
+  }
 ]
 
 const mutations = {

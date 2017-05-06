@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import * as types from '../mutation-types'
-import { findIndex } from 'lodash'
+import { findIndex, find } from 'lodash'
 import uuid from 'uuid/v4'
 
 const state = [
@@ -9,14 +9,14 @@ const state = [
     name: 'Foo',
     author: 'Bar',
     publishYear: '1234',
-    isAvailable: true
+    reservator: null
   },
   {
     bookId: '456',
     name: 'Azazaza',
     author: 'qqqq',
     publishYear: '1234',
-    isAvailable: false
+    reservator: null
   }
 ]
 
@@ -25,7 +25,7 @@ const mutations = {
     const book = {
       ...bookData,
       bookId: uuid(),
-      isAvailable: true
+      reservator: null
     }
     state.push(book)
   },
@@ -36,6 +36,14 @@ const mutations = {
   [types.REMOVE_BOOK] (state, book) {
     const index = findIndex(state, { bookId: book.bookId })
     state.splice(index, 1)
+  },
+  [types.RESERVE_BOOK] (state, { book, user }) {
+    const bookToMutate = find(state, { bookId: book.bookId })
+    bookToMutate.reservator = user.login
+  },
+  [types.RETURN_BOOK] (state, book) {
+    const bookToMutate = find(state, { bookId: book.bookId })
+    bookToMutate.reservator = null
   }
 }
 

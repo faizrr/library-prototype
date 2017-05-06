@@ -18,3 +18,9 @@ export const editBook = ({ commit }, book) => {
 export const removeBook = ({ commit }, book) => {
   commit(types.REMOVE_BOOK, book)
 }
+export const reserveBook = ({ commit }, payload) => {
+  commit(types.RESERVE_BOOK, payload)
+}
+export const returnBook = ({ commit }, book) => {
+  commit(types.RETURN_BOOK, book)
+}
