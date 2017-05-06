@@ -32,7 +32,7 @@
               <md-button class="md-icon-button" @click.native="editBook(row)">
                 <md-icon>edit</md-icon>
               </md-button>
-              <md-button class="md-icon-button">
+              <md-button class="md-icon-button" @click.native="removeBook(row)">
                 <md-icon>delete_forever</md-icon>
               </md-button>
             </div>
@@ -84,6 +84,9 @@
       },
       editBook (data) {
         this.$refs.addForm.open(data)
+      },
+      removeBook (book) {
+        this.$store.dispatch('removeBook', book)
       }
     }
   }

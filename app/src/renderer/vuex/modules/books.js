@@ -21,14 +21,18 @@ const state = [
 const mutations = {
   [types.ADD_BOOK] (state, bookData) {
     const book = {
-      bookId: uuid(),
-      ...bookData
+      ...bookData,
+      bookId: uuid()
     }
     state.push(book)
   },
   [types.EDIT_BOOK] (state, book) {
     const index = findIndex(state, { bookId: book.bookId })
     Vue.set(state, index, book)
+  },
+  [types.REMOVE_BOOK] (state, book) {
+    const index = findIndex(state, { bookId: book.bookId })
+    state.splice(index, 1)
   }
 }
 

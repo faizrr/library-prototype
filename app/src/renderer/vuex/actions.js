@@ -15,3 +15,6 @@ export const addBook = ({ commit }, book) => {
 export const editBook = ({ commit }, book) => {
   commit(types.EDIT_BOOK, book)
 }
+export const removeBook = ({ commit }, book) => {
+  commit(types.REMOVE_BOOK, book)
+}
