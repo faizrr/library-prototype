@@ -24,3 +24,11 @@ export const reserveBook = ({ commit }, payload) => {
 export const returnBook = ({ commit }, book) => {
   commit(types.RETURN_BOOK, book)
 }
+
+// Users
+export const createOrUpdateUser = ({ commit }, user) => {
+  commit(types.CREATE_OR_UPDATE_USER, user)
+}
+export const removeUser = ({ commit }, user) => {
+  commit(types.REMOVE_USER, user)
+}

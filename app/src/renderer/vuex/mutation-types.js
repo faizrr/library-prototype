@@ -1,4 +1,5 @@
-export const ADD_USER = 'ADD_USER'
+export const CREATE_OR_UPDATE_USER = 'CREATE_OR_UPDATE_USER'
+export const REMOVE_USER = 'REMOVE_USER'
 
 export const AUTHENTICATE_USER = 'AUTHENTICATE_USER'
 export const LOG_OUT = 'LOG_OUT'

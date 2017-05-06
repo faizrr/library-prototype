@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import { find, findIndex } from 'lodash'
 
 const state = [
   {
@@ -14,8 +15,17 @@ const state = [
 ]
 
 const mutations = {
-  [types.ADD_USER] (state, user) {
-    state.push(user)
+  [types.CREATE_OR_UPDATE_USER] (state, user) {
+    const userInState = find(state, { login: user.login })
+    if (!userInState) {
+      state.push(user)
+    } else {
+      Object.assign(userInState, user)
+    }
+  },
+  [types.REMOVE_USER] (state, user) {
+    const index = findIndex(state, user)
+    state.splice(index, 1)
   }
 }
 
