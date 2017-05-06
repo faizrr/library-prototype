@@ -18,6 +18,7 @@
           <md-table-head>Name</md-table-head>
           <md-table-head>Author</md-table-head>
           <md-table-head>Publish year</md-table-head>
+          <md-table-head>Actions</md-table-head>
         </md-table-row>
       </md-table-header>
 
@@ -26,6 +27,16 @@
           <md-table-cell>{{ row.name }}</md-table-cell>
           <md-table-cell>{{ row.author }}</md-table-cell>
           <md-table-cell>{{ row.publishYear }}</md-table-cell>
+          <md-table-cell>
+            <div>
+              <md-button class="md-icon-button" @click.native="editBook(row)">
+                <md-icon>edit</md-icon>
+              </md-button>
+              <md-button class="md-icon-button">
+                <md-icon>delete_forever</md-icon>
+              </md-button>
+            </div>
+          </md-table-cell>
         </md-table-row>
       </md-table-body>
     </md-table>
@@ -70,6 +81,9 @@
     methods: {
       addBook () {
         this.$refs.addForm.open()
+      },
+      editBook (data) {
+        this.$refs.addForm.open(data)
       }
     }
   }

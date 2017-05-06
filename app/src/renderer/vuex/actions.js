@@ -12,3 +12,6 @@ export const logOut = ({ commit }) => {
 export const addBook = ({ commit }, book) => {
   commit(types.ADD_BOOK, book)
 }
+export const editBook = ({ commit }, book) => {
+  commit(types.EDIT_BOOK, book)
+}

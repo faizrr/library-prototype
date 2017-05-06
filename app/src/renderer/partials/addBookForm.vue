@@ -29,30 +29,42 @@
 </template>
 
 <script>
+  const getInitialState = () => ({
+    bookId: null,
+    name: '',
+    author: '',
+    publishYear: ''
+  })
+
   export default {
     data () {
-      return {
-        name: '',
-        author: '',
-        publishYear: ''
-      }
+      return getInitialState()
     },
     methods: {
-      open () {
+      open (initialState = getInitialState()) {
+        Object.assign(this.$data, initialState)
         this.$refs.modal.open()
       },
       close () {
+        Object.assign(this.$data, getInitialState())
         this.$refs.modal.close()
       },
       saveBook () {
         let book = {
           name: this.name,
           author: this.author,
-          publishYear: this.publishYear
+          publishYear: this.publishYear,
+          bookId: this.bookId
         }
-        this.$store.dispatch('addBook', book).then(() => {
-          this.$refs.modal.close()
-        })
+        if (this.bookId) {
+          this.$store.dispatch('editBook', book).then(() => {
+            this.close()
+          })
+        } else {
+          this.$store.dispatch('addBook', book).then(() => {
+            this.close()
+          })
+        }
       }
     }
   }
