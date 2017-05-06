@@ -6,6 +6,8 @@ import Router from 'vue-router'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import 'notie/dist/notie.css'
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 import App from './App'
 import router from './router'
