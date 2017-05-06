@@ -9,7 +9,7 @@ const state = [
     name: 'Foo',
     author: 'Bar',
     publishYear: '1234',
-    reservator: null
+    reservator: 'admin'
   },
   {
     bookId: '456',

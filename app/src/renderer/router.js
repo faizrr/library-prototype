@@ -27,6 +27,12 @@ const routes = [
     meta: { requiresLogin: true }
   },
   {
+    path: '/users/:login',
+    name: 'User details',
+    component: require('components/UserDetailsView'),
+    meta: { requiresLogin: true, withBackButton: true }
+  },
+  {
     path: '*',
     redirect: '/'
   }

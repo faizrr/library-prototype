@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <md-toolbar>
-      <md-button class="md-icon-button" @click.native="openMenu">
+      <md-button v-if="enableBackButton" class="md-icon-button" @click.native="goBack">
+        <md-icon>arrow_back</md-icon>
+      </md-button>
+      <md-button v-else class="md-icon-button" @click.native="openMenu">
         <md-icon>menu</md-icon>
       </md-button>
 
@@ -22,12 +25,20 @@
   import SidebarMenu from 'renderer/partials/sidebarMenu'
 
   export default {
+    computed: {
+      enableBackButton () {
+        return this.$route.meta.withBackButton
+      }
+    },
     components: {
       SidebarMenu
     },
     methods: {
       openMenu () {
         this.$refs.menu.toggle()
+      },
+      goBack () {
+        this.$router.back()
       }
     },
     store
